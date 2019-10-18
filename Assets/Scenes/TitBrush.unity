@@ -112,6 +112,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &75943659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 75943660}
+  m_Layer: 0
+  m_Name: Drawing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &75943660
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75943659}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,6 +407,69 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &557953314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 557953317}
+  - component: {fileID: 557953315}
+  m_Layer: 0
+  m_Name: Stamper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &557953315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557953314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e2ace6f0ed9f34698dada08d4613f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteImage: {fileID: 21300000, guid: a7f903fa775d21c4e9c5f2c9cc5a5f03, type: 3}
+  sprites:
+  - {fileID: 21300000, guid: 2b0a11a5f1f812d439bcda3af86a5e4e, type: 3}
+  - {fileID: 21300000, guid: 8fd260d7f6aaefd4aa9436a520bfbb80, type: 3}
+  - {fileID: 21300000, guid: 8d2082b9ea2207a42a29efba00cac6cc, type: 3}
+  - {fileID: 21300000, guid: 2670b6d83f1df0348a7c21d584059739, type: 3}
+  - {fileID: 21300000, guid: bda67d85865916449a37e525be1c546f, type: 3}
+  - {fileID: 21300000, guid: 96c18a9e1642f454eab26737d96545c6, type: 3}
+  - {fileID: 21300000, guid: 76e65bfba812ee443b3fdba9805ef277, type: 3}
+  - {fileID: 21300000, guid: c1da9a1a3ea4bb24f93a3fdcebb0842d, type: 3}
+  - {fileID: 21300000, guid: 2670b6d83f1df0348a7c21d584059739, type: 3}
+  - {fileID: 21300000, guid: 54527763764f8bc458929fcf5400923b, type: 3}
+  - {fileID: 21300000, guid: 9d1acd0fbdbad7849b6397794c990a89, type: 3}
+  - {fileID: 21300000, guid: 512dcbad43d1af1448a820431e35770d, type: 3}
+  - {fileID: 21300000, guid: 9fc7e006030b56a4dbfcb3d6d294dd93, type: 3}
+  - {fileID: 21300000, guid: a7f903fa775d21c4e9c5f2c9cc5a5f03, type: 3}
+  drawingParent: {fileID: 75943659}
+  hand: {fileID: 497346903}
+  size: 0.05
+  spread: 10
+--- !u!4 &557953317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557953314}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &595247121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -384,6 +477,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 158226, guid: 84c8b8609f9bb434eaf5248f17ff1293, type: 3}
+      propertyPath: m_Name
+      value: Little_LocalAvatar
+      objectReference: {fileID: 0}
+    - target: {fileID: 158226, guid: 84c8b8609f9bb434eaf5248f17ff1293, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 463470, guid: 84c8b8609f9bb434eaf5248f17ff1293, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -427,14 +528,6 @@ PrefabInstance:
     - target: {fileID: 463470, guid: 84c8b8609f9bb434eaf5248f17ff1293, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 158226, guid: 84c8b8609f9bb434eaf5248f17ff1293, type: 3}
-      propertyPath: m_Name
-      value: Little_LocalAvatar
-      objectReference: {fileID: 0}
-    - target: {fileID: 158226, guid: 84c8b8609f9bb434eaf5248f17ff1293, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84c8b8609f9bb434eaf5248f17ff1293, type: 3}
@@ -558,8 +651,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d1c28080b652e469dc6ae2b9010da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMat: {fileID: 2100000, guid: e92c598ccd7563b408cb22916184a2e9, type: 2}
+  lineMat: {fileID: 2100000, guid: dd80d2a82e0977d46856463c51b1e146, type: 2}
   hand: {fileID: 497346903}
+  lineWidth: 0.5
+  drawingParent: {fileID: 75943659}
 --- !u!4 &1639920613
 Transform:
   m_ObjectHideFlags: 0
