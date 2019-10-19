@@ -768,7 +768,7 @@ public class LocomotionTeleport : MonoBehaviour
 
 		Vector3 destPosition = destTransform.position;
 		destPosition.y += character.height * 0.5f;
-		Quaternion destRotation = _teleportDestination.LandingRotation;// destTransform.rotation;
+		//Quaternion destRotation = _teleportDestination.LandingRotation;// destTransform.rotation; STE CHANGE
 #if false
 		Quaternion destRotation = destTransform.rotation;
 
@@ -778,11 +778,11 @@ public class LocomotionTeleport : MonoBehaviour
 #endif
 		if (Teleported != null)
 		{
-			Teleported(characterTransform, destPosition, destRotation);
+			Teleported(characterTransform, destPosition, destTransform.rotation); // STE CHANGE
 		}
 
 		characterTransform.position = destPosition;
-		characterTransform.rotation = destRotation;
+		//characterTransform.rotation = destRotation; STE CHANGE
 
 		LocomotionController.PlayerController.Teleported = true;
 	}
