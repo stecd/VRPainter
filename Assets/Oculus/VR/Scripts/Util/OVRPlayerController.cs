@@ -309,7 +309,7 @@ public class OVRPlayerController : MonoBehaviour
 			bool moveLeft = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
 			bool moveRight = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
 			bool moveBack = Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
-
+            Debug.Log("Forward true? " + moveForward);
 			bool dpad_move = false;
 
 			if (OVRInput.Get(OVRInput.Button.DpadUp))
@@ -391,7 +391,7 @@ public class OVRPlayerController : MonoBehaviour
 									   Vector3.right);
 		}
 
-		if (EnableRotation)
+		if (true) // STEPHANIE CHANGES
 		{
 			Vector3 euler = transform.rotation.eulerAngles;
 			float rotateInfluence = SimulationRate * Time.deltaTime * RotationAmount * RotationScaleMultiplier;

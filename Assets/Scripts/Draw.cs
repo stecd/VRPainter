@@ -10,6 +10,7 @@ public class Draw : MonoBehaviour
     public float lineWidth = 0.1f;
     public GameObject drawingParent;
     public bool isWater;
+    public bool isSelected;
     private MeshLineRenderer currLine;
     private int numClicks = 0;
      
@@ -18,45 +19,51 @@ public class Draw : MonoBehaviour
     void Start()
     {
         currLine = new MeshLineRenderer();
+        isWater = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!isSelected)
+            return;
 
         float triggerVal = OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger);
         if (triggerVal < 0.5 && triggerVal > 0.3) 
         {
-            GameObject go = new GameObject();
+            GameObject go = new GameObject("Stroke");
             go.AddComponent<MeshFilter>();
             go.AddComponent<MeshRenderer>();
-            go.transform.SetParent(drawingParent.transform);
-            currLine = go.AddComponent<MeshLineRenderer>();
+            go.AddComponent<MeshLineRenderer>();
+            //BoxCollider collider = go.AddComponent<BoxCollider>();
+            //collider.isTrigger = true;
+            //go.isStatic = true;
+            currLine = go.GetComponent<MeshLineRenderer>();
             currLine.lmat = new Material(lineMat);
             currLine.setWidth(lineWidth);
-            Debug.Log("PRINT");
-            Debug.Log(currLine);
+            //Debug.Log("start line");
+            //Debug.Log(currLine);
             numClicks = 0;
 
-            if (isWater)
-            {
-                currLine.gameObject.AddComponent<Water>();
-            }
+            go.transform.position = hand.transform.position;
+            go.transform.SetParent(drawingParent.transform);
+
         }
         else if (triggerVal > 0.8)
         {
-            Debug.Log("PRINT");
-            Debug.Log(currLine);
-
+            //Debug.Log("cont line");
+            //Debug.Log(currLine);
+            //currLine.AddPoint(hand.transform.position);
+            
             if (isWater && (numClicks % 10 == 0))
             {
-                Debug.Log("HERE");
                 currLine.AddPoint(hand.transform.position);
             }
             else if (!isWater)
             {
                 currLine.AddPoint(hand.transform.position);
             }
+            
             
             numClicks++;
         }
